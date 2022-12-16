@@ -19,6 +19,7 @@ const Cart = () => {
     totalQuantities,
     cartItems,
     setShowCart,
+    onRemove,
     toggleCartQuantity,
   } = useStateContext();
   return (
@@ -79,7 +80,11 @@ const Cart = () => {
                         </span>
                       </p>
                     </div>
-                    <button type="button" className="remove-item" onClick=" ">
+                    <button
+                      type="button"
+                      className="remove-item"
+                      onClick={() => onRemove(item)}
+                    >
                       <TiDeleteOutline />
                     </button>
                   </div>
@@ -93,13 +98,13 @@ const Cart = () => {
               <h3>Subtotal:</h3>
               <h3>${totalPrice}</h3>
             </div>
+            <div className="btn-container">
+              <button type="button" className="btn" onClick="">
+                Pay with Stripe
+              </button>
+            </div>
           </div>
         )}
-      </div>
-      <div className="btn-container">
-        <button type="button" className="btn" onClick="">
-          Pay with Stripe
-        </button>
       </div>
     </div>
   );
