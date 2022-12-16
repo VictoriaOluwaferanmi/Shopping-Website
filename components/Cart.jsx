@@ -46,7 +46,7 @@ const Cart = () => {
             </Link>
           </div>
         )}
-        <div className="product-coontainer">
+        <div className="product-container">
           {cartItems.length >= 1 &&
             cartItems.map((item, index) => (
               <div className="product" key={item._id}>
